@@ -44,7 +44,7 @@
 		return {
 			restrict : 'A',
 			link : function(scope, elem, attr) {
-				jQuery( elem ).click( function(event) {
+				$( elem ).on( 'click', function(event) {
 					event.preventDefault();
 				} );
 			}
@@ -61,13 +61,13 @@
 					var element = document.getElementById( elementId );
 					if ( element )
 						element.scrollIntoView();
-
-					return function(scope, elem, attr) {
-						elem.bind( 'click', function(event) {
-							scrollInto( attr.scrollTo );
-						} );
-					};
 				}
+
+				return function(scope, elem, attr) {
+					elem.bind( 'click', function(event) {
+						scrollInto( attr.scrollTo );
+					} );
+				};
 			}
 		}
 	} ] )
@@ -77,20 +77,6 @@
 	function FlcCtrl() {
 		var vm = this;
 	}
-
-	// $('#sidebar').affix({
-	// offset: {
-	// top: 245
-	// }
-	// });
-
-	// var $body = $(document.body);
-	// var navHeight = $('.navbar').outerHeight(true) + 10;
-
-	// $body.scrollspy({
-	// target: '#leftCol',
-	// offset: navHeight
-	// });
 
 	 @@templateCache
 }());
