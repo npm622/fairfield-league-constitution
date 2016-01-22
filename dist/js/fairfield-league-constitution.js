@@ -65,8 +65,8 @@
 					return function(scope, elem, attr) {
 						elem.bind( 'click', function(event) {
 							scrollInto( attr.scrollTo );
-						} )
-					}
+						} );
+					};
 				}
 			}
 		}
