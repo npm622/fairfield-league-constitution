@@ -8,7 +8,7 @@
 	angular.module( 'app.fairfieldLeagueConstitution', [ 'ui.router' ] )
 
 	.config( function config($stateProvider) {
-		$stateProvider.state( 'tito', {
+		$stateProvider.state( 'fairfieldLeagueConstitution', {
 			url : '/fairfieldLeagueConstitution',
 			templateUrl : 'constitution.tmpl.html',
 			controller : 'FlcCtrl',
