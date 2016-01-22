@@ -44,7 +44,7 @@
 		return {
 			restrict : 'A',
 			link : function(scope, elem, attr) {
-				jQuery( element ).click( function(event) {
+				jQuery( elem ).click( function(event) {
 					event.preventDefault();
 				} );
 			}
@@ -59,7 +59,7 @@
 					if ( !elementId )
 						$window.scrollTo( 0, 0 );
 					var element = document.getElementById( elementId );
-					if ( elem )
+					if ( element )
 						element.scrollIntoView();
 
 					return function(scope, elem, attr) {
