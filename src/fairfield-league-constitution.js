@@ -10,7 +10,7 @@
 	.config( function config($stateProvider) {
 		$stateProvider.state( 'fairfieldLeagueConstitution', {
 			url : '/fairfieldLeagueConstitution',
-			templateUrl : 'constitution.tmpl.html',
+			templateUrl : 'fairfield-league-constitution.tmpl.html',
 			controller : 'FlcCtrl',
 			controllerAs : 'flc',
 			data : {
