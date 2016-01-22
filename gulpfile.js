@@ -15,7 +15,7 @@ var config = {
 		tmpDir : 'tmp/',
 		file : 'tmpls.tmp',
 		options : {
-			module : 'fairfield-league-constitution',
+			module : 'app.fairfieldLeagueConstitution',
 			root : '',
 			standAlone : false
 		}
