@@ -29,9 +29,9 @@
 			link : function($scope, elem, attrs, scrollSpy) {
 				var spyElems = [];
 
-				$scope.$watch( "scrollSpy.spies", function(scrollSpy) {
+				$scope.$watch( "scrollSpy.spies", function(spies) {
 					var results = [];
-					var len = scrollSpy.spies.length;
+					var len = spies.length;
 					var i;
 					for ( i = 0; i < len; i++ ) {
 						var spy = scrollSpy.spies[i];
