@@ -44,9 +44,9 @@
 					return results;
 				} );
 
-				return $( $window ).scroll( function(scrollSpy) {
+				return $( $window ).scroll( function(spies) {
 					var highlightSpy = null;
-					var ref = scrollSpy.spies;
+					var ref = spies;
 					var len = ref.length;
 					var i;
 					for ( i = 0; i < len; i++ ) {
