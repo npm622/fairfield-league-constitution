@@ -1,12 +1,4 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>league constitution | fairfield league</title>
-</head>
-<body> -->
-
-<div class="masthead">
+<!-- <div class="masthead">
     <div class="container">
         <div class="row">
             <div class="col-md-5">
@@ -21,21 +13,20 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-3" id="leftCol">
+    <div class="row" scroll-spy>
+        <div class="col-md-3 sidebar">
             <ul class="nav nav-stacked" id="sidebar">
-                <li><a href="#preamble" prevent-default scroll-to="preamble">preamble</a></li>
-                <li><a href="#sec1" prevent-default scroll-to="sec1">Section 0</a></li>
-                <li><a href="#sec2" prevent-default scroll-to="sec2">Section 0</a></li>
-                <li><a href="#sec3" prevent-default scroll-to="sec3">Section 0</a></li>
-                <li><a href="#sec4" prevent-default scroll-to="sec4">Section 0</a></li>
+                <li spy="preamble">preamble</li>
+                <li spy="sec1">section 1</li>
+                <li spy="sec2">section 2</li>
+                <li spy="sec3">section 3</li>
+                <li spy="sec4">section 4</li>
             </ul>
         </div>
-        <div class="col-md-9" id="mainCol" data-target="#sidebar" scroll-spy>
-            <br />
+        <div class="col-md-9 content">
 
             <hr />
             <h2 id="preamble">preamble</h2>
@@ -98,6 +89,3 @@
         <hr>
     </div>
 </div>
-
-<!-- </body>
-</html> -->

@@ -19,63 +19,91 @@
 		} );
 	} )
 
-	.directive( 'scrollSpy', function($timeout) {
+	.directive( 'scrollSpy', function($window) {
 		return {
 			restrict : 'A',
-			link : function(scope, elem, attr) {
-				var offset = parseInt( attr.scrollOffset, 10 );
-				if ( !offset )
-					offset = 10;
-				elem.scrollspy( {
-					'offset' : offset
+			scope : {},
+			controller : 'ScrollSpyCtrl',
+			controllerAs : 'scrollSpy',
+			bindToController : true,
+			link : function($scope, elem, attrs, scrollSpy) {
+				var spyElems = [];
+
+				$scope.$watch( "scrollSpy.spies", function(scrollSpy) {
+					var results = [];
+					var len = scrollSpy.spies.length;
+					var i;
+					for ( i = 0; i < len; i++ ) {
+						var spy = scrollSpy.spies[i];
+						if ( spyElems[spy.id] == null ) {
+							results.push( spyElems[spy.id] = elem.find( '#' + spy.id ) );
+						} else {
+							results.push( void 0 );
+						}
+					}
+					return results;
 				} );
-				scope.$watch( attr.scrollSpy, function(value) {
-					$timeout( function() {
-						elem.scrollspy( 'refresh', {
-							'offset' : offset
-						} )
-					}, 1 );
-				}, true );
+
+				return $( $window ).scroll( function(scrollSpy) {
+					var highlightSpy = null;
+					var ref = scrollSpy.spies;
+					var len = ref.length;
+					var i;
+					for ( i = 0; i < len; i++ ) {
+						var spy = ref[i];
+						spy.out();
+						var pos;
+						if ( (pos = spyElems[spy.id].offset().top) - $window.scrollY <= 0 ) {
+							spy.pos = pos;
+							if ( highlightSpy == null ) {
+								highlightSpy = spy;
+							}
+							if ( highlightSpy.pos < spy.pos ) {
+								highlightSpy = spy;
+							}
+						}
+					}
+					// TODO: the below might have to be in double quotes
+					return highlightSpy != null ? highlightSpy['in']() : void 0;
+				} );
 			}
 		}
 	} )
 
-	.directive( 'preventDefault', function() {
+	.directive( 'spy', function() {
 		return {
-			restrict : 'A',
-			link : function(scope, elem, attr) {
-				$( elem ).on( 'click', function(event) {
-					event.preventDefault();
+			resrict : 'A',
+			require : '^scrollSpy',
+			link : function($scope, elem, attrs, scrollSpy) {
+				scrollSpy.addSpy( {
+					id : attrs.spy,
+					'in' : function() {
+						return elem.addClass( 'current' );
+					},
+					'out' : function() {
+						return elem.removeClass( 'current' );
+					}
 				} );
 			}
 		}
 	} )
 
-	.directive( 'scrollTo', [ '$window', function($window) {
-		return {
-			restrict : 'AC',
-			compile : function() {
-				function scrollInto(elementId) {
-					if ( !elementId )
-						$window.scrollTo( 0, 0 );
-					var element = document.getElementById( elementId );
-					if ( element )
-						element.scrollIntoView();
-				}
+	.controller( 'FlcCtrl', [ FlcCtrl ] )
 
-				return function(scope, elem, attr) {
-					elem.bind( 'click', function(event) {
-						scrollInto( attr.scrollTo );
-					} );
-				};
-			}
-		}
-	} ] )
-
-	.controller( 'FlcCtrl', [ FlcCtrl ] );
+	.controller( 'ScrollSpyCtrl', [ '$scope', ScrollSpyCtrl ] );
 
 	function FlcCtrl() {
 		var vm = this;
+	}
+
+	function ScrollSpyCtrl() {
+		var vm = this;
+
+		vm.spies = [];
+
+		vm.addSpy = function(spy) {
+			return vm.spies.push( spy );
+		}
 	}
 
 	 @@templateCache
