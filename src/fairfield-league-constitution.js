@@ -26,27 +26,27 @@
 			controller : 'ScrollSpyCtrl',
 			controllerAs : 'scrollSpy',
 			bindToController : true,
-			link : function($scope, elem, attrs, scrollSpy) {
+			link : function($scope, elem, attrs, spies) {
 				console.log('inside link function of scrollSpy directive');
 				console.log(elem);
 				console.log(attrs);
-				console.log(scrollSpy);
+				console.log(spies);
 				var spyElems = [];
 
-				$scope.$watch( "scrollSpy.spies", function(spies) {
-					console.log('inside $watch( "scrollSpy.spies" ) function');
+				$scope.$watch( "spies", function(spies) {
+					console.log('inside $watch( "spies" ) function');
 					console.log(spies);
 					var results = [];
 					var len = spies.length;
 					var i;
 					for ( i = 0; i < len; i++ ) {
-						var spy = scrollSpy.spies[i];
+						var spy = spies[i];
 						console.log('spyElem');
-						console.log(spyElems[spy.id]);
-						if ( spyElems[spy.id] == null ) {
+						console.log(spies[spy.id]);
+						if ( spies[spy.id] == null ) {
 							console.log('if');
 							console.log(elem.find('#' + spy.id));
-							results.push( spyElems[spy.id] = elem.find( '#' + spy.id ) );
+							results.push( spies[spy.id] = elem.find( '#' + spy.id ) );
 						} else {
 							console.log('else');
 							results.push( void 0 );
@@ -90,12 +90,12 @@
 		return {
 			resrict : 'A',
 			require : '^scrollSpy',
-			link : function($scope, elem, attrs, scrollSpy) {
+			link : function($scope, elem, attrs, spies) {
 				console.log('inside link function of spy directive');
 			console.log(elem);
 			console.log(attrs);
-			console.log(scrollSpy);
-				scrollSpy.addSpy( {
+			console.log(spies);
+			spies.addSpy( {
 					id : attrs.spy,
 					'in' : function() {
 						return elem.addClass( 'current' );
