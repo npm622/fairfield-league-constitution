@@ -27,17 +27,28 @@
 			controllerAs : 'scrollSpy',
 			bindToController : true,
 			link : function($scope, elem, attrs, scrollSpy) {
+				console.log('inside link function of scrollSpy directive');
+				console.log(elem);
+				console.log(attrs);
+				console.log(scrollSpy);
 				var spyElems = [];
 
 				$scope.$watch( "scrollSpy.spies", function(spies) {
+					console.log('inside $watch( "scrollSpy.spies" ) function');
+					console.log(spies);
 					var results = [];
 					var len = spies.length;
 					var i;
 					for ( i = 0; i < len; i++ ) {
 						var spy = scrollSpy.spies[i];
+						console.log('spyElem');
+						console.log(spyElems[spy.id]);
 						if ( spyElems[spy.id] == null ) {
+							console.log('if');
+							console.log(elem.find('#' + spy.id));
 							results.push( spyElems[spy.id] = elem.find( '#' + spy.id ) );
 						} else {
+							console.log('else');
 							results.push( void 0 );
 						}
 					}
@@ -51,9 +62,11 @@
 					var i;
 					for ( i = 0; i < len; i++ ) {
 						var spy = ref[i];
+						console.log(spy);
 						spy.out();
 						var pos;
 						if ( (pos = spyElems[spy.id].offset().top) - $window.scrollY <= 0 ) {
+							console.log('pos: ' + pos);
 							spy.pos = pos;
 							if ( highlightSpy == null ) {
 								highlightSpy = spy;
@@ -63,6 +76,9 @@
 							}
 						}
 					}
+					console.log('highlightSpy');
+					console.log(highlightSpy);
+					console.log(highlightSpy != null ? highlightSpy['in']() : void 0);
 					// TODO: the below might have to be in double quotes
 					return highlightSpy != null ? highlightSpy['in']() : void 0;
 				} );
@@ -75,6 +91,10 @@
 			resrict : 'A',
 			require : '^scrollSpy',
 			link : function($scope, elem, attrs, scrollSpy) {
+				console.log('inside link function of spy directive');
+			console.log(elem);
+			console.log(attrs);
+			console.log(scrollSpy);
 				scrollSpy.addSpy( {
 					id : attrs.spy,
 					'in' : function() {
@@ -103,7 +123,7 @@
 
 		vm.addSpy = function(spy) {
 			return vm.spies.push( spy );
-		}
+		};
 	}
 
 	 @@templateCache
