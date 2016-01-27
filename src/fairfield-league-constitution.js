@@ -42,13 +42,13 @@
 					for ( i = 0; i < len; i++ ) {
 						var spy = spies[i];
 						console.log('spyElem');
-						console.log(spies[spy.id]);
-						if ( spies[spy.id] == null ) {
+						if ( spyElems[spy.id] == null ) {
 							console.log('if');
 							console.log(elem.find('#' + spy.id));
-							results.push( spies[spy.id] = elem.find( '#' + spy.id ) );
+							results.push( spyElems[spy.id] = elem.find( '#' + spy.id ) );
 						} else {
 							console.log('else');
+							console.log(spyElems[spy.id]);
 							results.push( void 0 );
 						}
 					}
@@ -56,6 +56,9 @@
 				} );
 
 				return $( $window ).scroll( function(spies) {
+					console.log('inside $window.scroll method');
+					console.log(spies);
+					console.log(spyElems)
 					var highlightSpy = null;
 					var ref = spies;
 					var len = ref.length;
