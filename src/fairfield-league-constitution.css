@@ -31,8 +31,12 @@ body {
     border-left-width: 4px;
 }
 
+.content {
+    padding-bottom: 30px;
+}
+
 .content h2 {
-    padding-top: 39px;
+    padding-top: 30px;
     margin-top: -30px;
 }
 
