@@ -29,7 +29,7 @@
 			link : function($scope, elem, attrs, scrollSpy) {
 				$( '#sidebar' ).affix( {
 					offset : {
-						top : $( '#banner' ).height()
+						top : $( 'header' ).height()
 					}
 				} );
 
