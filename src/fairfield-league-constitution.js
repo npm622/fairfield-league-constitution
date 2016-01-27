@@ -114,5 +114,5 @@
 		};
 	}
 
-	// @@templateCache
+	 @@templateCache
 }());
