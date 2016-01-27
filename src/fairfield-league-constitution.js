@@ -27,10 +27,9 @@
 			controllerAs : 'scrollSpy',
 			bindToController : true,
 			link : function($scope, elem, attrs, scrollSpy) {
-				console.log( 'banner height: ' + $( '#banner' ).height() );
 				$( '#sidebar' ).affix( {
 					offset : {
-						top : 400
+						top : $( '#banner' ).height()
 					}
 				} );
 
@@ -97,11 +96,9 @@
 				scrollSpy.addSpy( {
 					id : attrs.spy,
 					'in' : function() {
-						// return elem.addClass( 'current' );
 						return elem.addClass( 'active' );
 					},
 					'out' : function() {
-						// return elem.removeClass( 'current' );
 						return elem.removeClass( 'active' );
 					}
 				} );
