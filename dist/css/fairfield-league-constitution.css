@@ -28,7 +28,12 @@ body {
 
 #sidebar li.active {
     border: 0 #eee solid;
-    border-right-width: 4px;
+    border-left-width: 4px;
+}
+
+.content h2 {
+    padding-top: 39px;
+    margin-top: -30px;
 }
 
 .footer {
