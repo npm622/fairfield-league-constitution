@@ -1,20 +1,20 @@
 body {
-	padding-top:50px;
+    padding-top: 50px;
 }
 
 #masthead {
-	min-height:270px;
+    min-height: 270px;
 }
 
 #masthead h1 {
-	font-size: 55px;
-	line-height: 1;
+    font-size: 55px;
+    line-height: 1;
 }
 
 @media screen and (min-width: 768px) {
-	#masthead h1 {
-		font-size: 100px;
-	}
+    #masthead h1 {
+        font-size: 100px;
+    }
 }
 
 #sidebar.affix-top {
@@ -23,15 +23,15 @@ body {
 
 #sidebar.affix {
     position: fixed;
-    top: 20px;
+    top: 55px;
 }
 
 #sidebar li.active {
-  	border:0 #eee solid;
-  	border-right-width:4px;
+    border: 0 #eee solid;
+    border-right-width: 4px;
 }
 
 #mainCol h2 {
-	padding-top: 55px;
+    padding-top: 55px;
     margin-top: -55px;
 }
