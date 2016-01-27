@@ -33,7 +33,7 @@
 				console.log(spies);
 				var spyElems = [];
 
-				$scope.$watch( "spies", function(spies) {
+				$scope.$watch( "scrollSpy.spies", function(spies) {
 					console.log('inside $watch( "spies" ) function');
 					console.log(spies);
 					var results = [];
