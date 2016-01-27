@@ -26,15 +26,15 @@
 			controller : 'ScrollSpyCtrl',
 			controllerAs : 'scrollSpy',
 			bindToController : true,
-			link : function($scope, elem, attrs, spies) {
+			link : function($scope, elem, attrs, scrollSpy) {
 				console.log('inside link function of scrollSpy directive');
 				console.log(elem);
 				console.log(attrs);
-				console.log(spies);
+				console.log(scrollSpy);
 				var spyElems = [];
 
 				$scope.$watch( "scrollSpy.spies", function(spies) {
-					console.log('inside $watch( "spies" ) function');
+					console.log('inside $watch function');
 					console.log(spies);
 					var results = [];
 					var len = spies.length;
@@ -55,12 +55,12 @@
 					return results;
 				} );
 
-				return $( $window ).scroll( function(spies) {
+				return $( $window ).scroll( function(e) {
 					console.log('inside $window.scroll method');
-					console.log(spies);
+					console.log(e);
 					console.log(spyElems)
 					var highlightSpy = null;
-					var ref = spies;
+					var ref = scrollSpy.spies;
 					var len = ref.length;
 					var i;
 					for ( i = 0; i < len; i++ ) {
