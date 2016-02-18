@@ -72,7 +72,7 @@
 						}
 					}
 
-					if ( $( window ).scrollTop() + $( window ).height() >= $( document ).height() ) {
+					if ( $( window ).scrollTop() + $( window ).height() - $( 'header' ).height() >= $( document ).height() ) {
 						spy.pos = pos;
 						highlightSpy = spy;
 					}
