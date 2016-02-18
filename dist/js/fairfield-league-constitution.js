@@ -59,7 +59,7 @@
 						spy.out();
 
 						var pos;
-						if ( (pos = spyElems[spy.id].offset().top) - $window.scrollY <= 0 ) {
+						if ( (pos = spyElems[spy.id].offset().top - $( 'header' ).height()) - $window.scrollY <= 0 ) {
 							spy.pos = pos;
 
 							if ( highlightSpy == null ) {
@@ -72,7 +72,7 @@
 						}
 					}
 
-					if ( $( window ).scrollTop() + $( window ).height() - $( 'header' ).height() >= $( document ).height() ) {
+					if ( $( window ).scrollTop() + $( window ).height() >= $( document ).height() ) {
 						spy.pos = pos;
 						highlightSpy = spy;
 					}
