@@ -191,7 +191,7 @@
                 if ( !offset )
                     offset = 10;
                 console.log( "offset:  " + offset );
-                elem.scrollspy( {
+                $( elem ).scrollspy( {
                     "offset" : offset
                 } );
                 scope.$watch( attr.scrollSpy, function( value ) {
