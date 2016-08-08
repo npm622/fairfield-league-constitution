@@ -5,7 +5,7 @@
         var vm = this;
     }
 
-    angular.module( 'fairfield-league-constitution', [ 'fairfield-league-constitution.templates', 'mgcrea.ngStrap.scrollspy', 'mgcrea.ngStrap.helpers.debounce' ] )
+    angular.module( 'fairfield-league-constitution', [ 'fairfield-league-constitution.templates', 'mgcrea.ngStrap.scrollspy', 'mgcrea.ngStrap.helpers.debounce', 'mgcrea.ngStrap.helpers.dimensions' ] )
 
     .provider( 'fairfieldLeagueConstitution', function() {
         var vm = this;
