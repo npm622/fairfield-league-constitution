@@ -24,16 +24,16 @@ body {
     }
 }
 
-#sidebar.affix-top {
+#documentSections.affix-top {
     position: static;
 }
 
-#sidebar.affix {
+#documentSections.affix {
     position: fixed;
     top: 55px;
 }
 
-#sidebar li.active {
+#documentSections li.active {
     border: 0 #eee solid;
     border-left-width: 4px;
 }
