@@ -1,27 +1,10 @@
-{  
-   "name":"fairfield-league-constitution",
-   "version":"0.0.0",
-   "description":"static rendering of the fairfield league constitution (fantasy football)",
-   "keywords":[  
-
-   ],
-   "homepage":"https://github.com/npm622/fairfield-league-constitution#readme",
-   "bugs":{  
-      "url":"https://github.com/npm622/fairfield-league-constitution/issues"
-   },
-   "license":"MIT",
-   "author":"nick makes",
-   "repository":{  
-      "type":"git",
-      "url":"git+https://github.com/npm622/fairfield-league-constitution.git"
-   },
-   "devDependencies":{  
-      "fs":"0.0.2",
-      "gulp":"^3.9.0",
-      "gulp-angular-templatecache":"^1.8.0",
-      "gulp-bower":"0.0.11",
-      "gulp-clean":"^0.3.1",
-      "gulp-concat":"^2.6.0",
-      "gulp-replace-task":"^0.11.0"
-   }
+{
+  "devDependencies": {
+    "del": "2.2.1",
+    "gulp": "3.9.1",
+    "gulp-angular-templatecache": "2.0.0",
+    "gulp-bower": "0.0.13",
+    "gulp-concat": "2.6.0",
+    "underscore": "1.8.3"
+  }
 }

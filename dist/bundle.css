@@ -1,7 +1,15 @@
 body {
     padding-top: 50px;
+    overflow: hidden;
 }
 
+@media ( max-width : 992px) {
+    body {
+        padding-top: 0px;
+    }
+}
+
+/** TODO: copying this over -- should refactor this and make cleaner */
 #masthead {
     min-height: 270px;
 }

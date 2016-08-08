@@ -2,8 +2,8 @@
    "name":"fairfield-league-constitution",
    "description":"static rendering of the fairfield league constitution (fantasy football)",
    "main":[  
-      "dist/js/fairfield-league-constitution.js",
-      "dist/css/fairfield-league-constitution.css"
+      "dist/bundle.js",
+      "dist/bundle.css"
    ],
    "moduleType":[],
    "license":"MIT",
