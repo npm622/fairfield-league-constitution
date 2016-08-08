@@ -188,7 +188,7 @@ angular.module('mgcrea.ngStrap.scrollspy', [ 'mgcrea.ngStrap.helpers.debounce', 
         var vm = this;
     }
 
-    angular.module( 'fairfield-league-constitution', [ 'fairfield-league-constitution.templates', 'mgcrea.ngStrap.scrollspy' ] )
+    angular.module( 'fairfield-league-constitution', [ 'fairfield-league-constitution.templates', 'mgcrea.ngStrap.scrollspy', 'mgcrea.ngStrap.helpers.debounce' ] )
 
     .provider( 'fairfieldLeagueConstitution', function() {
         var vm = this;
