@@ -5,7 +5,7 @@
         var vm = this;
     }
 
-    angular.module( 'fairfield-league-constitution', [ 'fairfield-league-constitution.templates', 'ui.router' ] )
+    angular.module( 'fairfield-league-constitution', [ 'fairfield-league-constitution.templates' ] )
 
     .provider( 'fairfieldLeagueConstitution', function() {
         var vm = this;
