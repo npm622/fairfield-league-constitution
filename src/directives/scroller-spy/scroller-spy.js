@@ -16,7 +16,7 @@
                 } );
                 scope.$watch( attr.scrollSpy, function( value ) {
                     $timeout( function() {
-                        elem.scrollspy( 'refresh', {
+                        $( elem ).scrollspy( 'refresh', {
                             "offset" : offset
                         } )
                     }, 1 );
