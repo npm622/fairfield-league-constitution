@@ -8,11 +8,9 @@
             resrict : 'A',
             require : '^scrollSpy',
             link : function( $scope, elem, attrs, scrollSpy ) {
-                $( document ).ready( function() {
-                    elem.click( function() {
-                        $location.hash( attrs.spy );
-                        $anchorScroll();
-                    } );
+                elem.bind( 'click', function( e ) {
+                    $location.hash( attrs.spy );
+                    $anchorScroll();
                 } );
 
                 scrollSpy.addSpy( {
