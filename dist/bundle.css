@@ -24,16 +24,16 @@ body {
     }
 }
 
-#documentSections.affix-top {
+#sidebar.affix-top {
     position: static;
 }
 
-#documentSections.affix {
+#sidebar.affix {
     position: fixed;
     top: 55px;
 }
 
-#documentSections li.active {
+#sidebar li.active {
     border: 0 #eee solid;
     border-left-width: 4px;
 }
@@ -59,9 +59,4 @@ body {
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: #3A3F44;
-}
-
-.scroller-pane {
-    height: 200px;
-    overflow: auto;
 }
