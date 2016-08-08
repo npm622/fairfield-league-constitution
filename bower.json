@@ -1,31 +1,32 @@
-{  
-   "name":"fairfield-league-constitution",
-   "description":"static rendering of the fairfield league constitution (fantasy football)",
-   "main":[  
-      "dist/bundle.js",
-      "dist/bundle.css"
-   ],
-   "moduleType":[],
-   "license":"MIT",
-   "ignore":[  
-      "**/.*",
-      "node_modules",
-      "bower_components",
-      "test",
-      "tests",
-      "src",
-      "package.json",
-      "gulpfile.js",
-      "README.md"
-   ],
-   "authors":[  
-      "nick makes"
-   ],
-   "homepage":"git://github.com/npm622/fairfield-league-constitution",
-   "repository":{  
-      "type":"git",
-      "url":"git://github.com/npm622/fairfield-league-constitution"
-   },
-   "dependencies":{  
-   }
+{
+  "name": "fairfield-league-constitution",
+  "description": "static rendering of the fairfield league constitution (fantasy football)",
+  "main": [
+    "dist/bundle.js",
+    "dist/bundle.css"
+  ],
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src",
+    "package.json",
+    "gulpfile.js",
+    "README.md"
+  ],
+  "authors": [
+    "nick makes"
+  ],
+  "homepage": "git://github.com/npm622/fairfield-league-constitution",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/npm622/fairfield-league-constitution"
+  },
+  "dependencies": {
+    "angular-strap": "~2.3.9"
+  }
 }

@@ -20,7 +20,7 @@ var templateCache = {
 
 var js = {
     src : [ 'src/app.js', 'src/components/**/*.js', 'src/directives/**/*.js', tmpDir + '/**/*.js' ],
-    lib : []
+    lib : [ 'bower/angular-strap/dist/modules/scrollspy.js' ]
 };
 
 var html = {
